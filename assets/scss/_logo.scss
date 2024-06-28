@@ -23,10 +23,31 @@
     display: inline-block;
     width: 10px;
     height: 1rem;
-    background: #fe5186;
+    background-color: $light-background;
     margin-left: 5px;
     border-radius: 1px;
-    animation: cursor 1s infinite;
+    animation: cursor 1.4s infinite;
+    animation-timing-function: steps(1);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $light-background;
+      color: $dark-color;
+    }
+  
+    @media (prefers-color-scheme: light) {
+      background-color: $dark-background;
+      color: $light-color;
+    }
+  
+    [data-theme=dark] & {
+      background-color: $light-background;
+      color: $dark-color;
+    }
+  
+    [data-theme=light] & {
+      background-color: $dark-background;
+      color: $light-color;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
